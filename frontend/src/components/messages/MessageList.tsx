@@ -1,13 +1,14 @@
 // components/MessageList.tsx
-// ✅ FINAL FIX: MessageList scrolls, stays within bounds
+// ✅ FIXED: Pass sender avatar from conversation to MessageBubble
 
-import React, { useRef, useEffect } from 'react';
-import type { Message, User } from '../../types/chat.types';
+import React, { useRef, useEffect, useMemo } from 'react';
+import type { Message, User, Conversation } from '../../types/chat.types';
 import MessageBubble from './MessageBubble';
 
 interface MessageListProps {
   messages: Message[];
   currentUser: User;
+  conversation: Conversation | null; // ✅ NEW: Need conversation
   loading?: boolean;
   onDeleteMessage: (messageId: number) => void;
 }
@@ -15,6 +16,7 @@ interface MessageListProps {
 const MessageList: React.FC<MessageListProps> = ({
   messages,
   currentUser,
+  conversation,
   loading = false,
   onDeleteMessage,
 }) => {
@@ -24,6 +26,22 @@ const MessageList: React.FC<MessageListProps> = ({
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // ✅ Create sender info map from conversation participants
+  const senderInfoMap = useMemo(() => {
+    if (!conversation) return new Map();
+    
+    const map = new Map<number, { avatar: string; name: string }>();
+    
+    conversation.participants.forEach(participant => {
+      map.set(participant.userId, {
+        avatar: participant.user.avatarUrl || '',
+        name: participant.user.fullName || participant.user.username
+      });
+    });
+    
+    return map;
+  }, [conversation]);
 
   // Group messages by date
   const groupMessagesByDate = (messages: Message[]) => {
@@ -50,7 +68,6 @@ const MessageList: React.FC<MessageListProps> = ({
 
   if (loading) {
     return (
-      // ✅ flex-1 để take remaining space
       <div className="flex-1 flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4" />
@@ -73,7 +90,6 @@ const MessageList: React.FC<MessageListProps> = ({
   }
 
   return (
-    // ✅ CRITICAL: flex-1 + overflow-y-auto = scrollable within bounds
     <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
       <div className="space-y-4">
         {Object.entries(messageGroups).map(([date, msgs]) => (
@@ -91,6 +107,9 @@ const MessageList: React.FC<MessageListProps> = ({
               const showAvatar =
                 !prevMessage || prevMessage.senderId !== message.senderId;
 
+              // ✅ Get sender info from map
+              const senderInfo = senderInfoMap.get(message.senderId);
+
               return (
                 <MessageBubble
                   key={message.id}
@@ -98,6 +117,8 @@ const MessageList: React.FC<MessageListProps> = ({
                   currentUser={currentUser}
                   showAvatar={showAvatar}
                   onDelete={onDeleteMessage}
+                  senderAvatar={senderInfo?.avatar} // ✅ Pass avatar
+                  senderName={senderInfo?.name}     // ✅ Pass name
                 />
               );
             })}

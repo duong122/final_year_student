@@ -1,4 +1,5 @@
 // components/MessageBubble.tsx
+// ✅ FIXED: Get avatar from conversation participants
 
 import React, { useState } from 'react';
 import { MoreVertical, Trash2, Copy } from 'lucide-react';
@@ -9,6 +10,8 @@ interface MessageBubbleProps {
   currentUser: User;
   showAvatar: boolean;
   onDelete: (messageId: number) => void;
+  senderAvatar?: string; // ✅ NEW: Pass avatar from parent
+  senderName?: string;   // ✅ NEW: Pass name from parent
 }
 
 const MessageBubble: React.FC<MessageBubbleProps> = ({
@@ -16,6 +19,8 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({
   currentUser,
   showAvatar,
   onDelete,
+  senderAvatar,
+  senderName,
 }) => {
   const [showOptions, setShowOptions] = useState(false);
   const isCurrentUser = message.senderId === currentUser.id;
@@ -78,6 +83,10 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({
     }
   };
 
+  // ✅ Get display info with fallback priority
+  const displayAvatar = senderAvatar || message.sender?.avatarUrl;
+  const displayName = senderName || message.sender?.fullName || 'User';
+
   return (
     <div
       className={`flex gap-2 mb-3 group ${
@@ -87,15 +96,15 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({
       {/* Avatar (for other users) */}
       {!isCurrentUser && showAvatar && (
         <div className="flex-shrink-0">
-          {message.sender?.avatarUrl ? (
+          {displayAvatar ? (
             <img
-              src={message.sender.avatarUrl}
-              alt={message.sender.fullName}
+              src={displayAvatar}
+              alt={displayName}
               className="w-8 h-8 rounded-full object-cover"
             />
           ) : (
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center text-white text-xs font-semibold">
-              {message.sender?.fullName?.charAt(0).toUpperCase() || '?'}
+              {displayName.charAt(0).toUpperCase()}
             </div>
           )}
         </div>
@@ -110,9 +119,9 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({
         }`}
       >
         {/* Sender name (for group chats) */}
-        {!isCurrentUser && showAvatar && message.sender && (
+        {!isCurrentUser && showAvatar && (
           <p className="text-xs text-gray-500 mb-1 ml-2">
-            {message.sender.fullName}
+            {displayName}
           </p>
         )}
 

@@ -1,5 +1,5 @@
 // src/components/messages/ChatWindow.tsx
-// ✅ FIXED: Proper flex layout for 100% height
+// ✅ UPDATED: Pass conversation to MessageList
 
 import React, { useState } from 'react';
 import { Phone, Video, MoreVertical } from 'lucide-react';
@@ -69,10 +69,9 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
     .map((t) => t.username);
 
   return (
-    // ✅ CRITICAL: flex-1 + flex flex-col + h-full + overflow-hidden
     <div className="flex-1 flex flex-col bg-white h-full overflow-hidden">
       
-      {/* Header - Fixed height (~64px) */}
+      {/* Header - Fixed height ~64px */}
       <div className="flex-shrink-0 h-16 flex items-center justify-between px-4 border-b border-gray-200 bg-white shadow-sm">
         <div className="flex items-center gap-3 min-w-0 flex-1">
           <div className="relative flex-shrink-0">
@@ -137,15 +136,16 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
         </div>
       </div>
 
-      {/* ✅ CRITICAL: MessageList with flex-1 để fill remaining space */}
+      {/* ✅ CRITICAL: Pass conversation to MessageList */}
       <MessageList
         messages={messages}
         currentUser={currentUser}
+        conversation={conversation} // ✅ ADD THIS
         loading={loading}
         onDeleteMessage={onDeleteMessage}
       />
 
-      {/* MessageInput - Fixed height (~80px) */}
+      {/* MessageInput - Fixed height ~80px */}
       <div className="flex-shrink-0">
         <MessageInput
           onSendMessage={onSendMessage}
