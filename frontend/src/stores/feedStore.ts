@@ -45,6 +45,8 @@ interface FeedState {
   updateComment: (commentId: number, content: string) => Promise<any>;
   deleteComment: (commentId: number) => Promise<void>;
   getCommentCount: (postId: string) => Promise<number>;
+  savePost: (postId: number) => Promise<void>;
+  unsavePost: (postId: number) => Promise<void>;
 }
 
 interface CurrentUser {
@@ -57,7 +59,6 @@ interface CurrentUser {
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-// ✅ Đơn giản hóa transform - chỉ cần map fields
 const transformApiPost = (apiPost: ApiPostResponse): Post => ({
   id: apiPost.id, // ✅ Giữ nguyên số
   userId: apiPost.userId,
@@ -244,7 +245,7 @@ export const useFeedStore = create<FeedState>((set, get) => ({
 
     try {
       const headers = getAuthHeaders();
-      
+
       const response = await fetch(
         `${API_BASE_URL}/api/posts/feed?page=${page}&size=${size}`,
         {
@@ -253,25 +254,28 @@ export const useFeedStore = create<FeedState>((set, get) => ({
           credentials: 'include',
         }
       );
-      
+
       if (!response.ok) {
         const errorText = await response.text();
         console.error('❌ loadPosts error:', errorText);
-        
+
         if (response.status === 401 || response.status === 403) {
           throw new Error('Authentication required. Please login again.');
         }
-        
+
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const result = await response.json();
-      
+
       if (result.success && result.data) {
         const transformedPosts = result.data.content.map(transformApiPost);
-        
+
+        // ✅ FIX: Add type annotation
+        const unsavedPosts = transformedPosts.filter((post: Post) => !post.isSaved);
+
         set({
-          posts: transformedPosts,
+          posts: unsavedPosts,
           currentPage: result.data.pageNumber,
           totalPages: result.data.totalPages,
           hasMore: !result.data.last,
@@ -288,6 +292,83 @@ export const useFeedStore = create<FeedState>((set, get) => ({
       });
     }
   },
+
+  savePost: async (postId: number) => {
+    try {
+      const token = localStorage.getItem('authToken');
+
+      if (!token) {
+        throw new Error('No authentication token found');
+      }
+
+      const response = await fetch(`${API_BASE_URL}/api/saved-posts/${postId}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to save post: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('✅ Post saved:', result);
+
+      // ✅ CRITICAL: Remove post from feed immediately
+      set((state) => ({
+        posts: state.posts.filter((post) => post.id !== postId)
+      }));
+
+      return result;
+    } catch (error) {
+      console.error('Error saving post:', error);
+      throw error;
+    }
+  },
+
+  unsavePost: async (postId: number) => {
+    try {
+      const token = localStorage.getItem('authToken');
+
+      if (!token) {
+        throw new Error('No authentication token found');
+      }
+
+      const response = await fetch(`${API_BASE_URL}/api/saved-posts/${postId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to unsave post: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('✅ Post unsaved:', result);
+
+      // Update isSaved status
+      set((state) => ({
+        posts: state.posts.map((post) =>
+          post.id === postId
+            ? { ...post, isSaved: false }
+            : post
+        ),
+      }));
+
+      return result;
+    } catch (error) {
+      console.error('Error unsaving post:', error);
+      throw error;
+    }
+  },
+
 
   loadCurrentUser: async () => {
     try {

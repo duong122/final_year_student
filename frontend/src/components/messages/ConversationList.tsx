@@ -1,4 +1,5 @@
 // src/components/messages/ConversationList.tsx
+// ✅ FIXED: Proper height constraints for scrolling
 
 import React, { useState, useEffect } from 'react';
 import { Search, Plus, X } from 'lucide-react';
@@ -12,7 +13,7 @@ interface ConversationListProps {
   currentUser: User;
   onSelectConversation: (id: number) => void;
   onCreateConversation?: () => void;
-  onSelectUser: (user: UserSearchResponse) => void; // ✨ MỚI: Callback khi chọn user
+  onSelectUser: (user: UserSearchResponse) => void;
   loading?: boolean;
 }
 
@@ -27,11 +28,11 @@ const ConversationList: React.FC<ConversationListProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredConversations, setFilteredConversations] = useState<Conversation[]>(conversations ?? []);
-  const [searchResults, setSearchResults] = useState<UserSearchResponse[]>([]); // ✨ MỚI
-  const [isSearchingUsers, setIsSearchingUsers] = useState(false); // ✨ MỚI
-  const [searchMode, setSearchMode] = useState<'conversations' | 'users'>('conversations'); // ✨ MỚI
+  const [searchResults, setSearchResults] = useState<UserSearchResponse[]>([]);
+  const [isSearchingUsers, setIsSearchingUsers] = useState(false);
+  const [searchMode, setSearchMode] = useState<'conversations' | 'users'>('conversations');
 
-  // ✨ MỚI: Debounce search
+  // Debounce search
   useEffect(() => {
     const timer = setTimeout(() => {
       if (searchQuery.trim().length >= 2) {
@@ -40,12 +41,12 @@ const ConversationList: React.FC<ConversationListProps> = ({
         setSearchMode('conversations');
         setSearchResults([]);
       }
-    }, 500); // Đợi 500ms sau khi user ngừng gõ
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  // Lọc conversations (logic cũ)
+  // Filter conversations
   useEffect(() => {
     const safeConversations = conversations ?? []; 
     
@@ -66,7 +67,6 @@ const ConversationList: React.FC<ConversationListProps> = ({
     }
   }, [searchQuery, conversations, currentUser.id, searchMode]);
 
-  // ✨ MỚI: Tìm kiếm users
   const handleSearchUsers = async () => {
     if (searchQuery.trim().length < 2) return;
 
@@ -77,7 +77,6 @@ const ConversationList: React.FC<ConversationListProps> = ({
       const result = await chatApiService.searchUsers(searchQuery.trim(), 0, 10);
       
       if (result.success && result.data) {
-        // Lọc bỏ chính mình khỏi kết quả
         const filteredUsers = result.data.filter(user => user.id !== currentUser.id);
         setSearchResults(filteredUsers);
       } else {
@@ -92,7 +91,6 @@ const ConversationList: React.FC<ConversationListProps> = ({
     }
   };
 
-  // ✨ MỚI: Clear search
   const handleClearSearch = () => {
     setSearchQuery('');
     setSearchResults([]);
@@ -107,9 +105,10 @@ const ConversationList: React.FC<ConversationListProps> = ({
   });
 
   return (
-    <div className="w-80 bg-white border-r border-gray-200 flex flex-col h-full">
-      {/* Header */}
-      <div className="p-4 border-b border-gray-200">
+    // ✅ FIX: h-full để take 100% parent height
+    <div className="w-80 bg-white border-r border-gray-200 flex flex-col h-full overflow-hidden">
+      {/* Header - Fixed height */}
+      <div className="flex-shrink-0 p-4 border-b border-gray-200">
         <div className="flex items-center justify-between mb-3">
           {onCreateConversation && (
             <button
@@ -154,16 +153,15 @@ const ConversationList: React.FC<ConversationListProps> = ({
         )}
       </div>
 
-      {/* Content */}
+      {/* ✅ FIX: Content với flex-1 và overflow-y-auto để scroll */}
       <div className="flex-1 overflow-y-auto">
         {loading || isSearchingUsers ? (
           <div className="flex items-center justify-center h-full">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500" />
           </div>
         ) : searchMode === 'users' && searchResults.length > 0 ? (
-          // ✨ MỚI: Hiển thị kết quả tìm kiếm users
           <div className="divide-y divide-gray-100">
-            <div className="px-4 py-2 bg-gray-50 text-xs font-semibold text-gray-600">
+            <div className="px-4 py-2 bg-gray-50 text-xs font-semibold text-gray-600 sticky top-0">
               KẾT QUẢ TÌM KIẾM ({searchResults.length})
             </div>
             {searchResults.map((user) => (
@@ -206,23 +204,24 @@ const ConversationList: React.FC<ConversationListProps> = ({
             </p>
           </div>
         ) : sortedConversations.length === 0 ? (
-          // Không có conversations
           <div className="flex flex-col items-center justify-center h-full text-gray-500 p-4">
             <p className="text-sm text-center">
               {searchQuery ? 'Không tìm thấy' : 'Chưa có cuộc trò chuyện'}
             </p>
           </div>
         ) : (
-          // Hiển thị conversations
-          sortedConversations.map((conversation) => (
-            <ConversationItem
-              key={conversation.id}
-              conversation={conversation}
-              currentUser={currentUser}
-              isActive={activeConversationId === conversation.id}
-              onClick={() => onSelectConversation(conversation.id)}
-            />
-          ))
+          // ✅ Conversations list - scrollable
+          <div>
+            {sortedConversations.map((conversation) => (
+              <ConversationItem
+                key={conversation.id}
+                conversation={conversation}
+                currentUser={currentUser}
+                isActive={activeConversationId === conversation.id}
+                onClick={() => onSelectConversation(conversation.id)}
+              />
+            ))}
+          </div>
         )}
       </div>
     </div>

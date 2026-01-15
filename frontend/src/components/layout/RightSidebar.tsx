@@ -1,7 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import SuggestedUsers from '../../components/suggestions/SuggestedUsers';
 import { Avatar, AvatarFallback, AvatarImage } from '../../components/ui/avatar';
 import { Button } from '../../components/ui/button';
+import ChatbotFloatingButton from '../chatbot/ChatbotFloatingButton';
 
 interface CurrentUser {
   id: number;
@@ -60,8 +62,8 @@ export default function RightSidebar() {
   };
 
   return (
-    <aside className="w-[320px] bg-white sticky top-0 h-screen overflow-y-auto">
-      <div className="pt-8 px-6">
+    <aside className="w-[320px] bg-white sticky top-0 h-screen overflow-y-auto relative">
+      <div className="pt-8 px-6 pb-24"> {/* Added pb-24 for chatbot space */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <Avatar className="w-11 h-11">
@@ -84,7 +86,6 @@ export default function RightSidebar() {
           </Button>
         </div>
         
-        {/* ✅ Pass currentUserId để SuggestedUsers filter */}
         <SuggestedUsers currentUserId={currentUser?.id} />
         
         <div className="mt-8 text-xs text-neutral-400 space-y-3">
@@ -105,6 +106,11 @@ export default function RightSidebar() {
           </div>
           <p>© 2025 LINKLY FROM ICEBEAR</p>
         </div>
+      </div>
+
+      {/* ✅ Chatbot Floating Button - Fixed position relative to sidebar */}
+      <div className="absolute bottom-6 right-6">
+        <ChatbotFloatingButton />
       </div>
     </aside>
   );

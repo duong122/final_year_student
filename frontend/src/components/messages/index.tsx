@@ -1,9 +1,10 @@
-// src/pages/Messages.tsx hoặc src/components/messages/index.tsx
+// src/components/messages/index.tsx
+// ✅ BEST SOLUTION: Calculate exact height considering MainLayout
 
 import React, { useEffect } from 'react';
 import { useChatStore } from '../../stores/chatStore';
-import ConversationList from '../../components/messages/ConversationList';
-import ChatWindow from '../../components/messages/ChatWindow';
+import ConversationList from './ConversationList';
+import ChatWindow from './ChatWindow';
 import type { UserSearchResponse } from '../../types/chat.types';
 
 const MessagesPage: React.FC = () => {
@@ -23,19 +24,14 @@ const MessagesPage: React.FC = () => {
     sendMessage,
     deleteMessage,
     sendTypingIndicator,
-    handleSelectUser, // ✨ MỚI
+    handleSelectUser,
   } = useChatStore();
 
-  // Load dữ liệu ban đầu
   useEffect(() => {
     const initChat = async () => {
-      // 1. Load user hiện tại
       await loadCurrentUser();
-      
-      // 2. Load danh sách conversations
       await loadConversations();
       
-      // 3. Kết nối WebSocket
       const token = localStorage.getItem('authToken');
       if (token) {
         connectWebSocket(token);
@@ -45,30 +41,25 @@ const MessagesPage: React.FC = () => {
     initChat();
   }, []);
 
-  // Handler khi chọn conversation từ list
   const handleSelectConversation = (conversationId: number) => {
     setActiveConversation(conversationId);
   };
 
-  // ✨ MỚI: Handler khi chọn user từ search results
   const handleUserSelect = async (user: UserSearchResponse) => {
     console.log('🔵 User selected:', user);
     await handleSelectUser(user);
   };
 
-  // Handler gửi tin nhắn
   const handleSendMessage = (content: string) => {
     if (content.trim()) {
       sendMessage(content);
     }
   };
 
-  // Handler xóa tin nhắn
   const handleDeleteMessage = async (messageId: number) => {
     await deleteMessage(messageId);
   };
 
-  // Handler typing indicator
   const handleTypingStart = () => {
     sendTypingIndicator(true);
   };
@@ -77,17 +68,14 @@ const MessagesPage: React.FC = () => {
     sendTypingIndicator(false);
   };
 
-  // Lấy messages của conversation đang active
   const currentMessages = activeConversationId 
     ? messagesByConversation[activeConversationId] || []
     : [];
 
-  // Lấy conversation đang active
   const activeConversation = conversations.find(
     (c) => c.id === activeConversationId
   );
 
-  // Hiển thị error nếu có
   if (error) {
     return (
       <div className="flex h-screen items-center justify-center bg-gray-50">
@@ -108,7 +96,6 @@ const MessagesPage: React.FC = () => {
     );
   }
 
-  // Hiển thị loading khi chưa load xong user
   if (!currentUser) {
     return (
       <div className="flex h-screen items-center justify-center bg-gray-50">
@@ -121,18 +108,18 @@ const MessagesPage: React.FC = () => {
   }
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Conversation List - Bên trái */}
+    // ✅ CRITICAL: h-screen để Messages fill toàn bộ viewport
+    // MainLayout sẽ wrap nó, nhưng Messages phải có h-screen
+    <div className="flex h-screen bg-gray-100 overflow-hidden">
       <ConversationList
         conversations={conversations}
         activeConversationId={activeConversationId}
         currentUser={currentUser}
         onSelectConversation={handleSelectConversation}
-        onSelectUser={handleUserSelect} // ✨ MỚI: Truyền handler
+        onSelectUser={handleUserSelect}
         loading={loading}
       />
 
-      {/* Chat Window - Bên phải */}
       <ChatWindow
         conversation={activeConversation || null}
         messages={currentMessages}
@@ -145,9 +132,8 @@ const MessagesPage: React.FC = () => {
         loading={loading}
       />
 
-      {/* Connection status indicator */}
       {!connected && (
-        <div className="fixed bottom-4 right-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-2 rounded-lg shadow-lg">
+        <div className="fixed bottom-4 right-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-2 rounded-lg shadow-lg z-50">
           ⚠️ Đang kết nối lại...
         </div>
       )}

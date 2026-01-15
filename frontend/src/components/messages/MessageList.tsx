@@ -1,4 +1,5 @@
 // components/MessageList.tsx
+// ✅ FINAL FIX: MessageList scrolls, stays within bounds
 
 import React, { useRef, useEffect } from 'react';
 import type { Message, User } from '../../types/chat.types';
@@ -18,14 +19,13 @@ const MessageList: React.FC<MessageListProps> = ({
   onDeleteMessage,
 }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
-  // Auto scroll to bottom khi có tin nhắn mới
+  // Auto scroll to bottom when new messages arrive
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Group messages theo ngày
+  // Group messages by date
   const groupMessagesByDate = (messages: Message[]) => {
     const groups: { [key: string]: Message[] } = {};
 
@@ -50,6 +50,7 @@ const MessageList: React.FC<MessageListProps> = ({
 
   if (loading) {
     return (
+      // ✅ flex-1 để take remaining space
       <div className="flex-1 flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4" />
@@ -72,39 +73,40 @@ const MessageList: React.FC<MessageListProps> = ({
   }
 
   return (
-    <div
-      ref={messagesContainerRef}
-      className="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4"
-    >
-      {Object.entries(messageGroups).map(([date, msgs]) => (
-        <div key={date}>
-          {/* Date separator */}
-          <div className="flex items-center justify-center my-4">
-            <div className="bg-gray-200 text-gray-600 text-xs px-3 py-1 rounded-full">
-              {date}
+    // ✅ CRITICAL: flex-1 + overflow-y-auto = scrollable within bounds
+    <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
+      <div className="space-y-4">
+        {Object.entries(messageGroups).map(([date, msgs]) => (
+          <div key={date}>
+            {/* Date separator */}
+            <div className="flex items-center justify-center my-4">
+              <div className="bg-gray-200 text-gray-600 text-xs px-3 py-1 rounded-full">
+                {date}
+              </div>
             </div>
+
+            {/* Messages */}
+            {msgs.map((message, index) => {
+              const prevMessage = index > 0 ? msgs[index - 1] : null;
+              const showAvatar =
+                !prevMessage || prevMessage.senderId !== message.senderId;
+
+              return (
+                <MessageBubble
+                  key={message.id}
+                  message={message}
+                  currentUser={currentUser}
+                  showAvatar={showAvatar}
+                  onDelete={onDeleteMessage}
+                />
+              );
+            })}
           </div>
+        ))}
 
-          {/* Messages */}
-          {msgs.map((message, index) => {
-            const prevMessage = index > 0 ? msgs[index - 1] : null;
-            const showAvatar =
-              !prevMessage || prevMessage.senderId !== message.senderId;
-
-            return (
-              <MessageBubble
-                key={message.id}
-                message={message}
-                currentUser={currentUser}
-                showAvatar={showAvatar}
-                onDelete={onDeleteMessage}
-              />
-            );
-          })}
-        </div>
-      ))}
-
-      <div ref={messagesEndRef} />
+        {/* Scroll anchor */}
+        <div ref={messagesEndRef} />
+      </div>
     </div>
   );
 };

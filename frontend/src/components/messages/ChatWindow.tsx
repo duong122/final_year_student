@@ -1,4 +1,5 @@
 // src/components/messages/ChatWindow.tsx
+// ✅ FIXED: Proper flex layout for 100% height
 
 import React, { useState } from 'react';
 import { Phone, Video, MoreVertical } from 'lucide-react';
@@ -68,11 +69,12 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
     .map((t) => t.username);
 
   return (
-    // ✅ FIX: Thêm h-full và overflow-hidden để contain layout
+    // ✅ CRITICAL: flex-1 + flex flex-col + h-full + overflow-hidden
     <div className="flex-1 flex flex-col bg-white h-full overflow-hidden">
-      {/* Header - Fixed height */}
-      <div className="flex-shrink-0 flex items-center justify-between p-4 border-b border-gray-200 bg-white shadow-sm">
-        <div className="flex items-center gap-3 min-w-0">
+      
+      {/* Header - Fixed height (~64px) */}
+      <div className="flex-shrink-0 h-16 flex items-center justify-between px-4 border-b border-gray-200 bg-white shadow-sm">
+        <div className="flex items-center gap-3 min-w-0 flex-1">
           <div className="relative flex-shrink-0">
             {avatarUrl ? (
               <img
@@ -116,13 +118,11 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
             
             {showOptions && (
               <>
-                {/* Backdrop to close menu */}
                 <div 
                   className="fixed inset-0 z-10" 
                   onClick={() => setShowOptions(false)}
                 />
                 
-                {/* Menu */}
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-20">
                   <button className="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors">
                     Xem thông tin
@@ -137,17 +137,15 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
         </div>
       </div>
 
-      {/* ✅ FIX: MessageList với flex-1 và overflow-hidden */}
-      <div className="flex-1 overflow-hidden">
-        <MessageList
-          messages={messages}
-          currentUser={currentUser}
-          loading={loading}
-          onDeleteMessage={onDeleteMessage}
-        />
-      </div>
+      {/* ✅ CRITICAL: MessageList with flex-1 để fill remaining space */}
+      <MessageList
+        messages={messages}
+        currentUser={currentUser}
+        loading={loading}
+        onDeleteMessage={onDeleteMessage}
+      />
 
-      {/* ✅ FIX: MessageInput - Fixed height at bottom */}
+      {/* MessageInput - Fixed height (~80px) */}
       <div className="flex-shrink-0">
         <MessageInput
           onSendMessage={onSendMessage}
