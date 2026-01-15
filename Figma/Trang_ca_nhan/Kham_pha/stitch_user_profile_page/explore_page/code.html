@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6e19e6",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#181121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full overflow-x-hidden">
+<aside class="fixed top-0 left-0 flex h-full w-20 flex-col border-r border-background-light-dark/10 bg-background-light dark:border-background-dark-light/10 dark:bg-background-dark transition-all duration-300 ease-in-out lg:w-64">
+<div class="flex h-16 shrink-0 items-center border-b border-background-light-dark/10 px-4 dark:border-background-dark-light/10 lg:px-6">
+<a class="flex items-center gap-2 text-background-dark dark:text-background-light" href="#">
+<svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7v-2z"></path></svg>
+<span class="hidden text-lg font-bold lg:block">SnapShare</span>
+</a>
+</div>
+<nav class="mt-8 flex flex-1 flex-col gap-2 px-2 lg:px-4">
+<a class="flex items-center gap-4 rounded-lg px-3 py-2 text-background-dark hover:bg-primary/10 dark:text-background-light dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="hidden font-medium lg:block">Home</span>
+</a>
+<a class="flex items-center gap-4 rounded-lg px-3 py-2 text-background-dark hover:bg-primary/10 dark:text-background-light dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="hidden font-medium lg:block">Search</span>
+</a>
+<a class="flex items-center gap-4 rounded-lg bg-primary/10 px-3 py-2 font-bold text-primary dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="hidden font-medium lg:block">Explore</span>
+</a>
+<a class="flex items-center gap-4 rounded-lg px-3 py-2 text-background-dark hover:bg-primary/10 dark:text-background-light dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">movie</span>
+<span class="hidden font-medium lg:block">Reels</span>
+</a>
+<a class="flex items-center gap-4 rounded-lg px-3 py-2 text-background-dark hover:bg-primary/10 dark:text-background-light dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="hidden font-medium lg:block">Messages</span>
+</a>
+<a class="flex items-center gap-4 rounded-lg px-3 py-2 text-background-dark hover:bg-primary/10 dark:text-background-light dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="hidden font-medium lg:block">Notifications</span>
+</a>
+<a class="flex items-center gap-4 rounded-lg px-3 py-2 text-background-dark hover:bg-primary/10 dark:text-background-light dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="hidden font-medium lg:block">Create</span>
+</a>
+<a class="flex items-center gap-4 rounded-lg px-3 py-2 text-background-dark hover:bg-primary/10 dark:text-background-light dark:hover:bg-primary/20" href="#">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCb0uFVfxbknXLHD3jhgRNtGsL-Xp3kkI_9fh12yKwF61WYlajlwgRdGNNiThaufof_Zuk6On1Jck6qwK1k4Wb_ZBBxhGsCl7rSn_1US70OxSfZrYdCgYr93_vuykMm9vZlFW6Hp9q6nCLeRfa3eTrJpO3AikToPdwh9stEeOPYXxPLNqTKvjoEgT2qar54va5bdBvqlDXmubrXpL92PS9XPo1cnAXKHEKjB7B1upPKiBHuNEmGgKSLRrYWrAZmaahUhc2tSSozeL5u");'></div>
+<span class="hidden font-medium lg:block">Profile</span>
+</a>
+</nav>
+<div class="mt-auto p-2 lg:p-4">
+<a class="flex items-center gap-4 rounded-lg px-3 py-2 text-background-dark hover:bg-primary/10 dark:text-background-light dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="hidden font-medium lg:block">More</span>
+</a>
+</div>
+</aside>
+<div class="flex-1 pl-20 lg:pl-64">
+<main class="flex-1">
+<div class="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+<div class="mb-8">
+<div class="w-full max-w-lg mx-auto">
+<label class="relative text-gray-400 focus-within:text-gray-600 block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-background-dark/50 dark:text-background-light/50">search</span>
+<input class="form-input w-full rounded-full border-none bg-background-light/80 dark:bg-background-dark/80 py-2 pl-10 pr-4 text-background-dark dark:text-background-light placeholder:text-background-dark/50 dark:placeholder:text-background-light/50" placeholder="Search" type="search"/>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 sm:gap-4">
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGyfZ4oYTMeoLaF3MLF21U5uRigC2R0F3dUizdaMEb9BicD8SDBuJKh6evNJNC1WHP1ftWQ07BmMmwRl_DXSYa_9k2C39475vnaRyxOKBR8t4xknv2Cm44u03aqFkcbcsLTDShbYKd4Svm3V9v7vTEnyzoodq0bAYkvISPtRgo7hCoy9X4Q10scX3nrP_J_WR2nd6n5MDdaEm1Dwo0ANkk_9tGTqKwpyuOcGXTwBomv6De6eAWuIpuH5QYkdyR5YCRgrMNIpEskcTT"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>1.2k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>345</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg col-span-2 row-span-2" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLdW3nDgmzeFVP-OKjrnfNgjDyFrmtfBdMcK4HiO3PkED7ikt9azobiIh1Dsn-QgGq9hAL8eXKOx4_ABCAH3VfOTXKKSaM9Savp1XlAgMOEHHI3Alrx3qo-14b7bv5kS8w4IapqhEebwckwkmauGqW_vN2QzjDOFr_M0VYwQlLMAMXUweYy8Ak92N_Q5cmUsZhpmhXWboTvoTzF_IkvT4BjrasFRpH_ZU0EpxFot9_sgeGA1ttvr7fhycF_qckQRpqEchwR7dcMegI"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>5.7k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>1.1k</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCviq-oM-o4KqEKpRC82Jb68ioazJtGeqVKgqR76sqixcTEaZTz7F6m3yBYJmBTuWvAejl--h7D-0PTa-zJFWxPXT4qWUfov1VryVg2M97m4zlyobp9NpVLM8F_p81NuSVZNAyZ3PTsovuDQDKNlVSebE67VDiEes27EPF7JiRA8lxGLPl4Z2YRm_TS4p4hThaBOgSVCalgi44pzVTTYqrEKBfBOpAyl4m8MATEzLzvIWx8k_6M4dz-B3O87jLlNnwymVY0tl1_emMu"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>890</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>120</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHo5AoSC7nTyYgEukLND0sC3iS0M2ewcCpC-FbA0ANQdBgzHioGzaaHi7fbtDjYD7pzcSTMriW-RSKzRDw7rKIQ-nDF-Sa_83L3hu1ED2FCT5bzpBafhGPK9d4kjLfAn46dpJXhoic3xTGR7Q6nKK2ieH01nAyNDs25Iq3YDGmev_IKDh_Ht0gZivRaBO-YI0E_9sKzMaTNj_spjXc227sEslcQsEaZpPFPmZ3iBRiL5ByjG3_WliU1msEFAs8bmaq29HxH8o2aZfz"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>2.5k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>450</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiqoVNGeJx3eipLVjrf3keTc94XhrQzTF5s6pcg_GBCzfcb4zYk9r1-oKy69CnDreTPjhEWEiTeqrV65rLFG_WqUzxzN5MnmT5kk1PlyOE0gyBdT8oZVSXwsnFRQmP-MscfNfKZX0lmqdyxEu1HuibdG38031eTR2eVA17tPwROrRdGZND1ICvOd7qApIkI6m3eOIHApLlmCYiS9Tl9X6ZcMpwHQYfmV2U0TE9Oqmqe-3Mb1JDUJ22dXEhGlGsPb8NIAjd_TNSPt3h"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>3.1k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>680</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzy4jfL3-Ow606Yq8ruUJUby5zlOnzqaKWN75CevnZOe5XvVfo2YT3vtiYrIpseH3nLAX0ZCqvi2yc-8LON82Mdy6emBry8Z7ZZtkMpVSYLNriwIH0wkXXRUx8sHtBOfnpt0qnDVqVEesXgV3o6TVj9WXYVNl5WC0HLbBE4LCQvKpTCRvOOfz9BKkRUFvDRc3RI-mY_KrGEMNOzJ82AegzwnxyKm5JGyGz2hzgJjPE7rpPWpUuBYT38B2oKS3VnNQi-qRJYZEk7TCu"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>980</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>210</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsYR5qFxTjUblvjdowTv6DmMpD6vUgoXgVYT7-G8byayqAGwGMjVlY6FF77JXyA7e9f9ED0t7jU_9Ij-ze-2D1pIEv_E6qdmF-vhOEC9sdkE_ypURWk8MRTbDfLn5AkNBjFYe1vrA3PCuKE63j7pFEeYnpV5I_Nmujjp9KzbJqUKLeJx6k7EFNV9h5ZlZQSdeqds7xlZWqE14xzJMVIM9wXXEJB2YLOf_jPZM8XvdjIHy9O_H4DrAyhWBKfuz81m1pH6JE8ma3E6SG"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>4.2k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>890</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwSzb61NbWjZBHIwdyBukmP311XaObhgxuPpGxjmt5AB2hjjVS9eT0zAubQHtqHU64DXeeiMKr8ntlTNJo3WO-BfJgTUxgK0sIstvC4fZTUpA9zvNAyrboOTBQmvbTLuTiinB88rLz8NpT2ob1lMgXJMSJNWTNhG2vZ-hu_e9bpV-rshpnL8aGwtuTCmO89i2OL7oric-37sk9iXVrjsK3gW_CGlFo4dm6TQm-1XHvQ6HMpCcdi_X-qch1H5ORsPMzCtsj8NpA_Anw"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>1.8k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>320</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCl11HevOuACneiCzOpKbU4CAypn1tNMdiSzHQPxQDEjyA83Bbxf237nimnVeVkoxAnm2gMfd08hLGngiIu5Dz0Qn4iDPbB6HTjeve1RahQSfTdaD40I5faKubCriXR6dDKqpZhA9fG6SjhxLrcQkDlMyV9qCHkZjxOarjDB115SlcsbnUjAvteGNh_xuq3gM4HvhYfzu_yKtuj11xQcI9LPTKyINfWYGmfSZkvykagcnThvR0_6zKyEmC5mbxOn-XszZ2nIpzM8xE"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>6.3k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>1.5k</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEksi0wccQTVjAsqNs-GBj-uhXh0jf0UKE7TCjSmCGVXz3DrcY4A0tRZGYR9VgMpgGIcmqzM5BklOJQ5A6j9iuQca8LYax5n4z8O8RkRcbmL5xCz6vZ_vwdnhSKVyqetD4OFna_Uhi6sBSGXIzSXcY3sdX-Kl80b_YJjwBm-h7zVW-fJ9eGIY9DzUxfMbuRG2wKWd0vbbGtEeQT5o2szhnZN5-4irzUKzQ603FFH7BhCcpRjqeUytyEmM5A976Cm3w4UoKNGL1iGCl"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>720</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>98</span>
+</div>
+</div>
+</div>
+</a>
+<a class="group relative block aspect-square overflow-hidden rounded-lg" href="#">
+<img alt="Gallery image" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCCSZcdO3HWIMR84e6QMaWbj8Iz48HmFktZgN2AxUVdz4py6n8Vff4Irg26PiAByEIoTEYKRfj3q3olRkPgbZjVJ27AeYix88C3O9HMMrwFIMwVZw8rMM34DGND9aZ-qGjfzALk3aEI_KNYwBaX4E17J3-XFppQfR0ew8dYooXFVgRHqoDwpC8R26tmQcyNukyxSDmmvLnq_MkvDc6wMF00BOx9hyo8GwvEnyQeQkVmpKpGPIGUiQuAud_2IfAniZHrT1T1oaC5fBL"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="flex items-center gap-4 text-white">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span>10.5k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>2.3k</span>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

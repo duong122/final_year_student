@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Linkly</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6e19e6",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#181121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex">
+<aside class="fixed top-0 left-0 h-full w-64 bg-background-light dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between py-8 px-4">
+<div>
+<div class="flex items-center gap-3 px-4 mb-10">
+<div class="text-primary size-7">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-slate-900 dark:text-white">Momento</h1>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-400">home</span>
+<span class="font-semibold text-slate-700 dark:text-slate-300">Home</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-400">search</span>
+<span class="font-semibold text-slate-700 dark:text-slate-300">Search</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-400">explore</span>
+<span class="font-semibold text-slate-700 dark:text-slate-300">Explore</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-400">movie</span>
+<span class="font-semibold text-slate-700 dark:text-slate-300">Reels</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-400">send</span>
+<span class="font-semibold text-slate-700 dark:text-slate-300">Messages</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-400">favorite</span>
+<span class="font-semibold text-slate-700 dark:text-slate-300">Notifications</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-400">add_box</span>
+<span class="font-semibold text-slate-700 dark:text-slate-300">Create</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<div class="size-6 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3ojCo_UYHhFYXagz6zsqYQAZSAFyTTnfJ02ZKyhucGptSMoT-xpTRxe33aMwTj8IMAeSMQGRksUVYRjQtPjTvD6GK_sR4u1-Z0jpb7mJm7yf81iSep8i1oPr7vF3mcPTt2q4_d0X-8456BI-zgpZh84Kp4nSB1IcBLAzFJOqCSqiroPUravVXmxIX6A2h3qkoMi7zZZRAJbyzIlUaBDN_cN_RVUWsbOm5b4lTFoBxSFOzA29oN3GZq8RBCHGNmI5CS1U07EeKkVfC");'></div>
+<span class="font-semibold text-slate-700 dark:text-slate-300">Profile</span>
+</a>
+</nav>
+</div>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-400">menu</span>
+<span class="font-semibold text-slate-700 dark:text-slate-300">More</span>
+</a>
+</aside>
+<main class="ml-64 flex-grow">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-8">
+<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-lg p-4">
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 text-center">
+<div class="relative group">
+<div class="size-16 rounded-full bg-gradient-to-tr from-yellow-400 to-primary p-0.5">
+<div class="bg-background-light dark:bg-background-dark p-0.5 rounded-full">
+<div class="size-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3ojCo_UYHhFYXagz6zsqYQAZSAFyTTnfJ02ZKyhucGptSMoT-xpTRxe33aMwTj8IMAeSMQGRksUVYRjQtPjTvD6GK_sR4u1-Z0jpb7mJm7yf81iSep8i1oPr7vF3mcPTt2q4_d0X-8456BI-zgpZh84Kp4nSB1IcBLAzFJOqCSqiroPUravVXmxIX6A2h3qkoMi7zZZRAJbyzIlUaBDN_cN_RVUWsbOm5b4lTFoBxSFOzA29oN3GZq8RBCHGNmI5CS1U07EeKkVfC");'></div>
+</div>
+</div>
+<span class="absolute -bottom-1 -right-1 bg-primary text-white rounded-full size-6 flex items-center justify-center border-2 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-sm">add</span>
+</span>
+</div>
+<p class="text-xs font-medium mt-2">Your Story</p>
+</div>
+<div class="flex-shrink-0 text-center">
+<div class="size-16 rounded-full bg-gradient-to-tr from-yellow-400 to-primary p-0.5">
+<div class="bg-background-light dark:bg-background-dark p-0.5 rounded-full">
+<div class="size-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWQ8rZWXDLL0gi7rTaweHMDtwZP_lW4c5UT8_y9eQDWsebx0y9GUwiZTqVI_9Q7thMHp0fxwNKnemKj21WFxSHhybIcDxJgd8EWkrG4dJa8d6sbKUzEe-M4b1Dc0-oFC_c7C726ejfII5sLsMiDeeuJUkRe81G_kbUW7kQL7zEdKZumO_cNXg1jteFs8r_-CyzszoQOlbl52Y9sBDAv8381FcwK5dv6PH9nTz7KG1gawSzyOIL-snwYS4rHKBz0ShJKNJqmq4PJ1yx");'></div>
+</div>
+</div>
+<p class="text-xs font-medium mt-2">S_Bennett</p>
+</div>
+<div class="flex-shrink-0 text-center">
+<div class="size-16 rounded-full bg-gradient-to-tr from-yellow-400 to-primary p-0.5">
+<div class="bg-background-light dark:bg-background-dark p-0.5 rounded-full">
+<div class="size-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDm2xTO7Xv9WIh5J-l4fandt09i1lcleYB2Sq5TG5Akl01rqLVgOjdvzGnSn0MMpY3XUchsmcX9rMEcPEiZfDPQ5ueaZF4zgQB2cgvTX4TPTe6jQHaqkbTjXPPd06D8IbllkIpsNi7uBTpgw4Zr_cbOuia5glI3CBVwsefFJ2Ann9zj-FZ-ROvLDnAAMS2MQ0RpRKallR8NBrdmLJnkTQUd2AhfZ5Vt6O-dZDN_mTcRjHnmmu2l6Eo3B7NBBLgDtkXiybLNQd_tD2S-");'></div>
+</div>
+</div>
+<p class="text-xs font-medium mt-2">Ethan_C</p>
+</div>
+<div class="flex-shrink-0 text-center">
+<div class="size-16 rounded-full bg-gradient-to-tr from-yellow-400 to-primary p-0.5">
+<div class="bg-background-light dark:bg-background-dark p-0.5 rounded-full">
+<div class="size-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDY5VWGwAF6R6EqCQARrqM0mGpukl7Gd8YGhorOl7jvHX-eqN5tn3Qyp1W2Tr2Vl8DpM_Z5ODL68f5RLYI-Sn9Qmx3Kqz6VgJ3oRRovShpwSi36TtLJ-ilrvStCzR1kyRCrs5Rk93PGfle4VQtSNktApmye5EGe1WbMUf7jGUv-HK9Aeogm6rsf4cOahdRUnbTeLFzxVup_gfS55_4H2sI5jOuCbLKV6UBF9FmewS0IhAVHL7T9_1xaDQM6A79m17GHR3TevstK8ril");'></div>
+</div>
+</div>
+<p class="text-xs font-medium mt-2">Olivia.D</p>
+</div>
+<div class="flex-shrink-0 text-center">
+<div class="size-16 rounded-full bg-gradient-to-tr from-yellow-400 to-primary p-0.5">
+<div class="bg-background-light dark:bg-background-dark p-0.5 rounded-full">
+<div class="size-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6grBP8eEq1rtrdrenjEkJpNQlsiaVPECIHZubO1Pq5h8gSy5WVFCn1UO_UPQch1EKlLCDsGn7qkoFiPfXgRyyHx83eYNN0reKm-qN0C5mWpjpxj5UduIcQzgcNXFaPC4bUxSgZlRSkWifoPKRsRoupLOetY-Ypi3qrLm79jZCH2vXE3seBKVm2-ozG2_YTixxAbQ9krFtSvzIsZtk2ld31db4EE3XAkmERd9tmNa3hDIbIDeWxMVUrxEYLDLtzSDLqaCzwh79VFSs");'></div>
+</div>
+</div>
+<p class="text-xs font-medium mt-2">Liam_H</p>
+</div>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
+<div class="p-4 flex items-center gap-4">
+<a class="flex items-center gap-4" href="#">
+<div class="size-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWQ8rZWXDLL0gi7rTaweHMDtwZP_lW4c5UT8_y9eQDWsebx0y9GUwiZTqVI_9Q7thMHp0fxwNKnemKj21WFxSHhybIcDxJgd8EWkrG4dJa8d6sbKUzEe-M4b1Dc0-oFC_c7C726ejfII5sLsMiDeeuJUkRe81G_kbUW7kQL7zEdKZumO_cNXg1jteFs8r_-CyzszoQOlbl52Y9sBDAv8381FcwK5dv6PH9nTz7KG1gawSzyOIL-snwYS4rHKBz0ShJKNJqmq4PJ1yx");'></div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white">Sophia Bennett</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">1d</p>
+</div>
+</a>
+</div>
+<div class="aspect-w-1 aspect-h-1">
+<div class="bg-cover bg-center w-full h-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4Zf5EkpyF0m5fiBPCMiRLGadaLnEiX1RfwPaGJtULgYjHbxUIT6PnHDjiDGX4qzdq5SPly69eA3BKPK34anFVH_e1KhyfECjDN8bUHLsnwG0SgrlW_2sC07S6L3GcJq2SEMLjFyHHCicc23m9lkQjhg4I2kZVuTkorZxyYhMnTv9r0HRKQAAloOCBRuQItWdfVUD-DcIvDAvlJxud2idViifA46d2pH_wZOvDKPX8Cs8qSpT9Q2DE1h-ZrqR_cmqgczOgu2dn01Bc");'></div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-sm font-semibold">123</span>
+</button>
+<button class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm font-semibold">45</span>
+</button>
+<button class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<button class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+<p class="text-slate-800 dark:text-slate-200"><a class="font-semibold text-slate-900 dark:text-white" href="#">Sophia Bennett</a> Backstage at the fashion show. The energy is electric!</p>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
+<div class="p-4 flex items-center gap-4">
+<a class="flex items-center gap-4" href="#">
+<div class="size-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDm2xTO7Xv9WIh5J-l4fandt09i1lcleYB2Sq5TG5Akl01rqLVgOjdvzGnSn0MMpY3XUchsmcX9rMEcPEiZfDPQ5ueaZF4zgQB2cgvTX4TPTe6jQHaqkbTjXPPd06D8IbllkIpsNi7uBTpgw4Zr_cbOuia5glI3CBVwsefFJ2Ann9zj-FZ-ROvLDnAAMS2MQ0RpRKallR8NBrdmLJnkTQUd2AhfZ5Vt6O-dZDN_mTcRjHnmmu2l6Eo3B7NBBLgDtkXiybLNQd_tD2S-");'></div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white">Ethan Carter</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">2d</p>
+</div>
+</a>
+</div>
+<div class="aspect-w-1 aspect-h-1">
+<div class="bg-cover bg-center w-full h-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdRinnQBdpCQMHr1zZl590jtJFaHmcP6uTSZXIwEF2FxI37J_Q_fWlt8CA9h2OpSPW_hFOzouR_FTphjshfm2uqHsgIA5PusEOolHI32XoQslflw1dVeis4jm1M_U9ErUorHU17LRqzc_-F-MVgRjb_MxFcFWuq8YLLEPYppRPiQ8Pz4AFlC__J_WpRiHnx4hYhIWiOGTMtDHj11U0bk85BUtBYl_8lwpdJLgnAGypP8g_AvHlj-A3eMeyCaiGMyYfnn5uh0XnY-14");'></div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-sm font-semibold">234</span>
+</button>
+<button class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm font-semibold">78</span>
+</button>
+<button class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<button class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+<p class="text-slate-800 dark:text-slate-200"><a class="font-semibold text-slate-900 dark:text-white" href="#">Ethan Carter</a> Sunrise over the mountains. A perfect start to the day.</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-6">
+<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-lg p-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-semibold text-slate-600 dark:text-slate-300">Suggestions For You</h3>
+<a class="text-sm font-semibold text-primary" href="#">See All</a>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<a class="flex items-center gap-3" href="#">
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPXEwO83O8B2VIhb5-ROenuT2GRcVsJ0hOIN4gFg85hUhF_n7q2d-_Q6L3xHGpLQ32ZZI348j3_VtyiLddT7J6cZa7FSVQP4Fmgvra4FPon-xSTtucIzbO6iP1kL_kjD5GQeedBK8jrRxz93fPd1BKq0F-w9SUMilDH6pu2B9nqB5ZuUrX_Yvesb1t2NFws17_VNgs3f88Tiq3-spXLwAV8ybopwVhU3ZuY02u08vKaex82m8YSdb6qOSl32d-MEFeDViJtsoMVDFE");'></div>
+<div>
+<p class="font-semibold text-sm">james_dean</p>
+<p class="text-xs text-slate-500">Followed by olivia.d</p>
+</div>
+</a>
+<button class="text-sm font-semibold text-primary hover:text-primary/80">Follow</button>
+</div>
+<div class="flex items-center justify-between">
+<a class="flex items-center gap-3" href="#">
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPXEwO83O8B2VIhb5-ROenuT2GRcVsJ0hOIN4gFg85hUhF_n7q2d-_Q6L3xHGpLQ32ZZI348j3_VtyiLddT7J6cZa7FSVQP4Fmgvra4FPon-xSTtucIzbO6iP1kL_kjD5GQeedBK8jrRxz93fPd1BKq0F-w9SUMilDH6pu2B9nqB5ZuUrX_Yvesb1t2NFws17_VNgs3f88Tiq3-spXLwAV8ybopwVhU3ZuY02u08vKaex82m8YSdb6qOSl32d-MEFeDViJtsoMVDFE");'></div>
+<div>
+<p class="font-semibold text-sm">art_by_mia</p>
+<p class="text-xs text-slate-500">New to Momento</p>
+</div>
+</a>
+<button class="text-sm font-semibold text-primary hover:text-primary/80">Follow</button>
+</div>
+<div class="flex items-center justify-between">
+<a class="flex items-center gap-3" href="#">
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPXEwO83O8B2VIhb5-ROenuT2GRcVsJ0hOIN4gFg85hUhF_n7q2d-_Q6L3xHGpLQ32ZZI348j3_VtyiLddT7J6cZa7FSVQP4Fmgvra4FPon-xSTtucIzbO6iP1kL_kjD5GQeedBK8jrRxz93fPd1BKq0F-w9SUMilDH6pu2B9nqB5ZuUrX_Yvesb1t2NFws17_VNgs3f88Tiq3-spXLwAV8ybopwVhU3ZuY02u08vKaex82m8YSdb6qOSl32d-MEFeDViJtsoMVDFE");'></div>
+<div>
+<p class="font-semibold text-sm">travel_guru</p>
+<p class="text-xs text-slate-500">Follows you</p>
+</div>
+</a>
+<button class="text-sm font-semibold text-primary hover:text-primary/80">Follow</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>Momento | Messages</title>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#6e19e6",
+            "background-light": "#f7f6f8",
+            "background-dark": "#181121",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-200">
+
+</aside>
+<div class="grid flex-1 grid-cols-[350px_1fr]">
+<aside class="flex flex-col border-r border-zinc-200 dark:border-zinc-800">
+<div class="p-4 border-b border-zinc-200 dark:border-zinc-800">
+<div class="flex items-center justify-between">
+<h1 class="text-2xl font-bold">Messages</h1>
+<button class="flex items-center justify-center rounded-full h-8 w-8 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+<span class="material-symbols-outlined text-zinc-600 dark:text-zinc-400">edit_square</span>
+</button>
+</div>
+<div class="relative mt-4">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="h-5 w-5 text-zinc-500 dark:text-zinc-400" fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+</div>
+<input class="w-full rounded-lg border-transparent bg-zinc-200/50 dark:bg-zinc-800/50 py-2 pl-10 pr-4 text-sm focus:border-primary focus:ring-primary" placeholder="Search" type="text"/>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto">
+<nav class="flex flex-col p-2">
+<a class="flex items-center gap-4 rounded-lg bg-primary/10 dark:bg-primary/20 p-3" href="#">
+<div class="relative">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBR4gPiye9BkkJDgcRcicKx_rMRJZOvcDQMCCCmhVvTtE4LEDSe65XZhC4e_kaXQKUVL_scrTxpW41sbuz3Hp1ZYQPvRwNVxc25GcJjVlRJgKCm4C5Lj-uC0094tPC6gwQ-LTgpzz87LwSmcC-_NrhEeyUuCZKhXgWi3lLtGUdM5PXAzrEdElhAjWw2i-o2j9-uDhExpyKr02H3JHg7mYzNOWXdEecXYHFxjcqgnWFumaesr0I6MCfRQn2KOlknNbxLLHDfD6hJrqHk");'></div>
+<span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-background-light dark:ring-background-dark"></span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<p class="font-bold text-zinc-900 dark:text-zinc-50">Sophia Bennett</p>
+<p class="text-xs text-zinc-500 dark:text-zinc-400">10m</p>
+</div>
+<p class="text-sm text-zinc-600 dark:text-zinc-300">Sounds like a plan! I'll se...</p>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-lg hover:bg-primary/5 dark:hover:bg-primary/10 p-3" href="#">
+<div class="relative">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCAfFXDsZ0l1BXH6olPyB5NJ0aVZebNtIjjUAmQOia3zI1jBRc516pdSn4tegXGgGr2T0j5BS0XZnulDd_JesAGunm5eUZmkJ7RjstcVGaTCwTSCX-c4isvgwszOli8Fx-BnYOw7Mtpuorv5LVaTWAqGC2_xDmMe1b1cbexpAcjQZfZyB3fcMsptyGUN4y35Z8Gc-pYa-BbUhMKbIO98xTITdCN6W-NUxYPf-wA3Q3VrbH5GRwslMqVMIebrQun7kwQs0YzTmo-4RoI");'></div>
+<span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-background-light dark:ring-background-dark"></span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<p class="font-medium text-zinc-800 dark:text-zinc-200">Ethan Carter</p>
+<p class="text-xs text-zinc-500 dark:text-zinc-400">30m</p>
+</div>
+<p class="text-sm text-zinc-500 dark:text-zinc-400">You: Nice! I'd love to see th...</p>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-lg hover:bg-primary/5 dark:hover:bg-primary/10 p-3" href="#">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACn6SN3LCo0zZW37h5WSyOD_MbrBVEqtbgV5aV_TrwSZZlwv0iiWIAVgN-2CG14rl_kIu29TE1xjH1twdMXDdhpJFHToPke7aVIFO38lUdoOab5JacZ2bD-bUc5NhNZkdKLhdZ4RP6wjX8lZOiLnCvLp2jM1VNu_lGqrpaKyFAXLjkmTXQpVLLtzJToiRxGN_3HGMYEPKfwl90Ihhq1Vy_QRpAwEfT63i2IGNfNOMM3NHBFMVPwRKbbKO3GC-Q6_F81fXfS1DSgD7C");'></div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<p class="font-medium text-zinc-800 dark:text-zinc-200">Olivia Davis</p>
+<p class="text-xs text-zinc-500 dark:text-zinc-400">1h</p>
+</div>
+<p class="text-sm text-zinc-500 dark:text-zinc-400">That sounds exciting! I'm...</p>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-lg hover:bg-primary/5 dark:hover:bg-primary/10 p-3" href="#">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7KG0QiOMeEBmhMOSJ-1rLxzlLhE6sIHP7Sm__HmcbKxATPLfjMOnnNQIiqsPpNZrJkpqMPbGTbe7WhVzM7i95oG4XBzCESCVRTQNAYYkjDP7syp6ina8S-NLCJ4kNulb5ugrNLE6Si_nEYuOgP84o_SC2mCtQYVl52cAuwCKM6IvrlTxHyDmv6qN5HxaNFc9-vbI7lfYE29MjbWpQ1mnpkIHOEA8vtZQKMCM9F9nSA3v90fvNT3rFHUb4NRsw5dBkjtPpzoG3PQWl");'></div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<p class="font-medium text-zinc-800 dark:text-zinc-200">Noah Thompson</p>
+<p class="text-xs text-zinc-500 dark:text-zinc-400">2h</p>
+</div>
+<p class="text-sm text-zinc-500 dark:text-zinc-400">You: I'm doing great, than...</p>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-lg hover:bg-primary/5 dark:hover:bg-primary/10 p-3" href="#">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1F1FJLcvuoBwexwOT2pgHpbXkEPBSIM8vomYd57PA3ePb1YxM1KzEYp5gGWMMqjGcMEBWiuRPJEk_rTlGidvESUfe0fBHYEe-tHd-UWdOsFwbestN9mj4Nvx4srQoBAOMk_UR45-3FP3wk6Yh2vOSjd8Ntqoy2rmz8uOAHeGW68BHpi28EsAZaygA3m_ntuBKImLVXW_3Z8o-9Uhfl93FfP-GHjmUu5B7bzpdltXH_iOPfYlkh4MmECjrSBjognk-Vv58Ye9HLkwS");'></div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<p class="font-medium text-zinc-800 dark:text-zinc-200">Ava Wilson</p>
+<p class="text-xs text-zinc-500 dark:text-zinc-400">3h</p>
+</div>
+<p class="text-sm text-zinc-500 dark:text-zinc-400">Hey! How are you doing?</p>
+</div>
+</a>
+</nav>
+</div>
+</aside>
+<main class="flex flex-col">
+<div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBR4gPiye9BkkJDgcRcicKx_rMRJZOvcDQMCCCmhVvTtE4LEDSe65XZhC4e_kaXQKUVL_scrTxpW41sbuz3Hp1ZYQPvRwNVxc25GcJjVlRJgKCm4C5Lj-uC0094tPC6gwQ-LTgpzz87LwSmcC-_NrhEeyUuCZKhXgWi3lLtGUdM5PXAzrEdElhAjWw2i-o2j9-uDhExpyKr02H3JHg7mYzNOWXdEecXYHFxjcqgnWFumaesr0I6MCfRQn2KOlknNbxLLHDfD6hJrqHk");'></div>
+<div>
+<p class="font-bold text-zinc-900 dark:text-zinc-50">Sophia Bennett</p>
+<p class="text-sm text-green-500">Online</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+<span class="material-symbols-outlined text-zinc-600 dark:text-zinc-400">call</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+<span class="material-symbols-outlined text-zinc-600 dark:text-zinc-400">videocam</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+<svg class="h-6 w-6 text-zinc-600 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+</button>
+</div>
+</div>
+<div class="flex-1 space-y-6 overflow-y-auto p-6">
+<div class="flex items-end gap-3">
+<div class="h-8 w-8 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSOQR3sp3m4kMKsT22SPabOdlCY4kHPPu9U1pjJ4Wj1cMka1kJdsPdBIbBXCmUXGFquYqpykT-rb6HvirPEqZ_jpucn1YfT6rTV7At2_3UHd7G-AMLftrwveIDv7EgK3s-rvEbG6F4_MUTEuYOMpPinKWjtOH-RGe9dy8IKuLkVUWfiYEIscqfvF3n1Lq25rE2NQZMyGhVcd2Slgwa93ze9VtDX7GwM5a5j5cVwl1lUYkB8C7hBeIPe86MDjPxJeyjqLEOFeTkUoHG");'></div>
+<div class="rounded-xl rounded-bl-none bg-zinc-200/70 dark:bg-zinc-800/70 p-3 max-w-md">
+<p class="text-sm">Hey! How are you doing?</p>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end">
+<div class="rounded-xl rounded-br-none bg-primary text-white p-3 max-w-md">
+<p class="text-sm">I'm doing great, thanks! Just finished a photoshoot. How about you?</p>
+</div>
+<div class="h-8 w-8 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJoLtl4f8Kzdw7Ypu2a-4s_oVSHrC-PpHtg7cON4otucD0oMrkIRZ6ET4086DyM-CR5XjvqeXH9Ov1FqTnwYnNKVvjTiZ2rMg4_AxqWp2F0QqIcEIUR1UAUuLTWoeskrU7u4w-G7h3reLkKUorxElDqMsMEc7EH4-DIBc6U7fgA7k0t3o1YKmEQeIbIiqfVpSl4KtPzgkNz8KZBGI0i8Npk3jElnaDuR784F82al-OTUc4ruFNBCNcgfYA3wg7HU35rRMuoGziGnNV");'></div>
+</div>
+<div class="flex items-end gap-3">
+<div class="h-8 w-8 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDv5en0KwRZR6bgedQJhZaMVSW65B4zEE8cu3ArM79d50Is1QglwtIH4Izr3k8aE_P8BW8hYlOTPu0_qSyIzAXLVgJs2mBgD2kTdN2FuDHA3OHMB26JF2URXKcLbZ3-Z7fOhc_-IWdK7A3jEasalDc6x8FFrF4kwsSPhYpLNSAistYeGnyLF-eRkHjcd30XTnjDQ86l3sNkvxTEOa6aFrE6hlaHmqVsL-Rh3HI0_mH-RvXfRsJJ6HN_0-55bT7dhGhyYHZPxM5iUn3b");'></div>
+<div class="rounded-xl rounded-bl-none bg-zinc-200/70 dark:bg-zinc-800/70 p-3 max-w-md">
+<p class="text-sm">That sounds exciting! I'm just chilling at home, editing some photos from my last trip.</p>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end">
+<div class="rounded-xl rounded-br-none bg-primary text-white p-3 max-w-md">
+<p class="text-sm">Nice! I'd love to see them when you're done. Maybe we can grab coffee next week and catch up properly?</p>
+</div>
+<div class="h-8 w-8 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADSU2Fe9dbr0bDBREUR_BvKYsKcLsAu0TW7WnlyLrM7mGzCMs3M9sAq40K1FmxyLnEg3XulYlz9y7vjwIL54GdjLLA3I6_4ShOGrkSWN_o62vPE0VCiLU5dzNxXkGj3viD88i4iQ-MuBl-U-M00KBErAGNsLkFAsLmqK-jSQQFVXr6N_KNRfR33bpg_Lb5SIg-WRQR1wynqoVHJNm4OjxzGDjnfwrkv7_VQqE44N3_LsBCy8rshLcifqQBwxBJLN98Q3xOBOOCRIL7");'></div>
+</div>
+<div class="flex items-end gap-3">
+<div class="h-8 w-8 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIyQnZPs6ykdZBt-7QYKIFDwmPv61w0kshAVAQeXjEhct5lnGQOIqpEyPv_yPkj5Hxr9H5Vntgffmw8SJ-uQKuTq0-4zJF5mjuGcVg8KTlV5f5oxZMWTqFkBTJZkiz3vBe88fQ-bJSIvTTM9jk8HpHVfds1eumK0vkuvQCjLDDByYZDL5ZTKZ8fL7fntwK9ZhaDkGLIvILlycyd9pb8YomA3lagiVmXT1P2YX6EZHuX60DBYK8-8f1SbKmw5OJnmCf7ZnLwPWaflY9");'></div>
+<div class="rounded-xl rounded-bl-none bg-zinc-200/70 dark:bg-zinc-800/70 p-3 max-w-md">
+<p class="text-sm">Sounds like a plan! I'll send you a few previews later. Coffee next week it is!</p>
+</div>
+</div>
+</div>
+<div class="border-t border-zinc-200 dark:border-zinc-800 p-4">
+<div class="flex items-center gap-2 rounded-lg bg-zinc-200/50 dark:bg-zinc-800/50 p-2">
+<input class="flex-1 bg-transparent text-sm focus:outline-none placeholder-zinc-500 dark:placeholder-zinc-400 px-2" placeholder="Message..." type="text"/>
+<div class="flex items-center">
+<button class="flex items-center justify-center h-10 w-10 rounded-lg text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+<button class="flex items-center justify-center h-10 w-10 rounded-lg text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="flex items-center justify-center h-10 w-10 rounded-lg text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700">
+<span class="material-symbols-outlined">image</span>
+</button>
+<button class="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white">Send</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

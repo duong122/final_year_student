@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PhotoShare Login</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#6e19e6",
+            "background-light": "#f7f6f8",
+            "background-dark": "#181121",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .form-input::placeholder {
+        color: #a0aec0;}
+    .dark .form-input::placeholder {
+        color: #718096;}
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col min-h-screen">
+<div class="flex flex-col items-center justify-center flex-grow p-4">
+<div class="w-full max-w-md p-8 space-y-6 bg-white dark:bg-background-dark rounded-xl shadow-lg">
+<div class="text-center">
+<div class="flex justify-center items-center gap-2 mb-4">
+<svg class="text-primary h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white">PhotoShare</h1>
+</div>
+<p class="text-gray-600 dark:text-gray-400">Welcome back! Log in to your account.</p>
+</div>
+<form class="space-y-4">
+<div>
+<label class="sr-only" for="credentials">Email, phone, or username</label>
+<input class="form-input w-full px-4 py-3 rounded-lg bg-background-light dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary" id="credentials" name="credentials" placeholder="Email, phone, or username" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="password">Password</label>
+<input class="form-input w-full px-4 py-3 rounded-lg bg-background-light dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary" id="password" name="password" placeholder="Password" type="password"/>
+</div>
+<div class="flex items-center justify-between">
+<a class="text-sm text-primary hover:underline" href="#">Forgot password?</a>
+</div>
+<div>
+<button class="w-full py-3 px-4 bg-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-colors" type="submit">
+              Log In
+            </button>
+</div>
+</form>
+<div class="relative flex items-center justify-center my-6">
+<div class="flex-grow border-t border-gray-300 dark:border-gray-700"></div>
+<span class="flex-shrink mx-4 text-sm text-gray-500 dark:text-gray-400">OR</span>
+<div class="flex-grow border-t border-gray-300 dark:border-gray-700"></div>
+</div>
+<div class="space-y-3">
+<button class="w-full flex items-center justify-center py-3 px-4 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<img alt="Facebook" class="h-5 w-5 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZUKo6VHUL4j4bGfzWlkcAkt46glrj2n__zMXaMEUiLSruCnVj3w5aal2_px8EH0cwkuzh_g86IbMoeRX8b2pYnzXXRmNkb9_YO6lmdiZV3lf4B9m2xIh7N5PwPVbalMFDZj-ASfl4CF9lvyULXGp1a8zRlnavN30R5O4ON5YV7rmvnbnsjQKz3TcOKuSL7ikNc-iXAG880f_P-bimSdEOIq7ONzRVfvoBU9i-qaCx95zVnHMqRYfPiH4rUwsJx7vZ0QoRp9idPPfG"/>
+                Continue with Facebook
+            </button>
+<button class="w-full flex items-center justify-center py-3 px-4 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<img alt="Google" class="h-5 w-5 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_NtZ1Y7CKUrTpbe1Q2aRtHpU3cc3YV5Wr4r5ZRo02ek4SBfJwUKs_V_xJMtkBxk0g7QUFGQl6kFgybwvQ-O8Y5n8WNHLlB9qh-yPcoUQrJZcUMw0oAUb1P7wReFpBQ-yoZiIX7pc2bGHL6O99_c6XwOqWxRSNC77ATF7xhRUvbvAt1oOpukYx3WTwJxR-T0UuC2GxcIE9rIIuafSPWuAYxWJiclcHUtZ4bLyNP2MIlkyf0ux4BxIWo7db2dDsBdt3F9tMbGXenxQp"/>
+                Continue with Google
+            </button>
+</div>
+<p class="text-center text-sm text-gray-600 dark:text-gray-400 mt-8">
+          Don't have an account?
+          <a class="font-medium text-primary hover:underline" href="#">Sign up</a>
+</p>
+</div>
+</div>
+</div>
+
+</body></html>

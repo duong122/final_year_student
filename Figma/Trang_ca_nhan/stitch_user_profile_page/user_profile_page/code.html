@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6e19e6",
+              "background-light": "#f7f6f8",
+              "background-dark": "#181121",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 flex-shrink-0 border-r border-primary/20 dark:border-primary/30 flex flex-col justify-between p-6 bg-background-light dark:bg-background-dark">
+<div>
+<div class="text-2xl font-bold text-primary mb-10">
+          Phlow
+        </div>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-background-dark dark:text-background-light hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-medium">Home</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-background-dark dark:text-background-light hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-medium">Search</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-background-dark dark:text-background-light hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-medium">Explore</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-background-dark dark:text-background-light hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">movie</span>
+<span class="font-medium">Reels</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-background-dark dark:text-background-light hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-background-dark dark:text-background-light hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-medium">Notifications</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-background-dark dark:text-background-light hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">add_box</span>
+<span class="font-medium">Create</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+<div class="w-6 h-6 rounded-full bg-cover bg-center ring-1 ring-primary" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPd1JSGibwMqjRzUvxEjq60bEg3EhfaMKDtD7izbbZSfaFhqZmAWyHHvLBNHQuObCxghVhhSP-iG5zzBKGOn0_Ol_ad6kqMVTCED47OGgxEPO-n06QXLby6h1Z1TpuWO4i22_18qhwjuPobeI6MAOneAVuMw2SSgvD60PzwbcaxVwOAo4rV0Kscq9wiGN6TPZf__r2Bq3C8DMMwJe1J5rvrzpfftnCRm3DrCu77GUIwHVQWiPzme2ziojKHPC4uhhyEmxBw9PX_Fvs");'></div>
+<span class="font-medium">Profile</span>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 px-4 py-2 rounded-lg text-background-dark dark:text-background-light hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-medium">More</span>
+</div>
+</aside>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-4xl mx-auto">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16 p-4">
+<div class="flex-shrink-0">
+<div class="w-36 h-36 md:w-40 md:h-40 rounded-full bg-cover bg-center ring-4 ring-primary/50" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADpRonBWRxCxyg-uygX-pj6DdXAS1-L0Nab1ScXHG1DGNleiewLQYDiOdw-Kwos1NkgQ2R3e-K5SNs-Psst5j7O3VOGEoIjDyKBF4YUgKA9vhruOcw7vPc8LIec4O9K4iOtBy-QJS5ua2ShbnKHtqU1sJNibwuH2KiYh-GlAcJ5iHuqjuCxIqJSUK9f4cShAZTb5ziwsyADrHcazlA1v9lcsX5Y7F5tH0m_taNMNSFnRyZWAiNytV7e4qjmMcH298P8uFDyGtOVCHo");'></div>
+</div>
+<div class="flex-grow flex flex-col items-center md:items-start gap-4">
+<div class="text-center md:text-left">
+<h1 class="text-2xl font-bold text-background-dark dark:text-background-light">Sophia Carter</h1>
+<p class="text-background-dark/60 dark:text-background-light/60">@sophiacarter</p>
+</div>
+<p class="text-center md:text-left text-background-dark dark:text-background-light max-w-md">
+                Travel enthusiast | Photographer | Sharing my adventures around the globe
+              </p>
+<div class="flex gap-3 mt-2">
+<button class="px-6 py-2 rounded-lg bg-primary text-white font-bold text-sm">Follow</button>
+<button class="px-6 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary font-bold text-sm">Message</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 px-4 py-6 border-y border-primary/20 dark:border-primary/30 my-8">
+<div class="text-center">
+<p class="text-xl font-bold text-background-dark dark:text-background-light">1,234</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">Posts</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-bold text-background-dark dark:text-background-light">56.7k</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">Followers</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-bold text-background-dark dark:text-background-light">890</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">Following</p>
+</div>
+</div>
+<div class="flex gap-8 mb-8 px-4">
+<div class="flex flex-col items-center gap-2">
+<div class="w-20 h-20 rounded-full bg-cover bg-center ring-2 ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark ring-primary" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADpRonBWRxCxyg-uygX-pj6DdXAS1-L0Nab1ScXHG1DGNleiewLQYDiOdw-Kwos1NkgQ2R3e-K5SNs-Psst5j7O3VOGEoIjDyKBF4YUgKA9vhruOcw7vPc8LIec4O9K4iOtBy-QJS5ua2ShbnKHtqU1sJNibwuH2KiYh-GlAcJ5iHuqjuCxIqJSUK9f4cShAZTb5ziwsyADrHcazlA1v9lcsX5Y7F5tH0m_taNMNSFnRyZWAiNytV7e4qjmMcH298P8uFDyGtOVCHo");'></div>
+<span class="text-sm font-medium text-background-dark dark:text-background-light">My Story</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-20 h-20 rounded-full bg-cover bg-center ring-2 ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark ring-primary/50" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALobAVqXIeM12ZeYDwGhKD6kDkeLbHRlOjg__z1u4uUV_jOnYYLO2PGcvoyn5JlXuH-9D7kiJj3LOkfBv2VAXqO8vYOgw5K94MQONGfwL1pgjStYqOimTotoYc7-zf-7alnhWwSnMoPqTG052mp6X28QgzNu6bLxRcvuQV5pbQzZmBv2qUVQ-r9UIKH_1MzotQjg8icAqrhpagyvXxO69ULCr8HYwIkAZqdX-NvDxs9MWbuWQBl20EJctqxhBNPsiNFv2wkpF-gAMC");'></div>
+<span class="text-sm font-medium text-background-dark dark:text-background-light">Highlights</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-20 h-20 rounded-full bg-cover bg-center ring-2 ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark ring-primary/50" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAkHIRWvVNH_ZmKYuyi6WXqcptjBnqtjVCToVjaU3R9a3umfvhW0UMt7hOkY4ou4s10yNS8U2wosTSY9nORiu_hVyY69doth5q1rF5xvag22wwj5CGPWW7KWMCy2Z7bnPWdvYRU5G5go9NO2A5_wZAQBX1XaELndkbunYrzlfz8_MyVMHexORH2y2vS7Mmf_iCCTSY6GPitTqfriVU_6d-UPucGsuxWFG-TvwbsmwbepMUlEEqapmhhUUFNprgHRSmS-SmbSRDoMbN");'></div>
+<span class="text-sm font-medium text-background-dark dark:text-background-light">Travels</span>
+</div>
+</div>
+<div class="border-t border-primary/20 dark:border-primary/30">
+<nav aria-label="Tabs" class="flex justify-center -mb-px">
+<a class="w-1/3 py-4 px-1 text-center border-b-2 border-primary font-medium text-sm text-primary" href="#"> Posts </a>
+<a class="w-1/3 py-4 px-1 text-center border-b-2 border-transparent text-background-dark/60 dark:text-background-light/60 hover:text-primary hover:border-primary/50 font-medium text-sm" href="#"> Saved </a>
+<a class="w-1/3 py-4 px-1 text-center border-b-2 border-transparent text-background-dark/60 dark:text-background-light/60 hover:text-primary hover:border-primary/50 font-medium text-sm" href="#"> Tagged </a>
+</nav>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 sm:gap-4 py-4">
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALobAVqXIeM12ZeYDwGhKD6kDkeLbHRlOjg__z1u4uUV_jOnYYLO2PGcvoyn5JlXuH-9D7kiJj3LOkfBv2VAXqO8vYOgw5K94MQONGfwL1pgjStYqOimTotoYc7-zf-7alnhWwSnMoPqTG052mp6X28QgzNu6bLxRcvuQV5pbQzZmBv2qUVQ-r9UIKH_1MzotQjg8icAqrhpagyvXxO69ULCr8HYwIkAZqdX-NvDxs9MWbuWQBl20EJctqxhBNPsiNFv2wkpF-gAMC");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAkHIRWvVNH_ZmKYuyi6WXqcptjBnqtjVCToVjaU3R9a3umfvhW0UMt7hOkY4ou4s10yNS8U2wosTSY9nORiu_hVyY69doth5q1rF5xvag22wwj5CGPWW7KWMCy2Z7bnPWdvYRU5G5go9NO2A5_wZAQBX1XaELndkbunYrzlfz8_MyVMHexORH2y2vS7Mmf_iCCTSY6GPitTqfriVU_6d-UPucGsuxWFG-TvwbsmwbepMUlEEqapmhhUUFNprgHRSmS-SmbSRDoMbN");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4symi2Zk4jR3mzbYOn-fGUlU5KdhbNMZ_3oHQv91tvafYDAJ44aJstSCiTcxRP06VO5WMPc2lmUNyi8HQVSnw3ozkloofcRByE-IwCMD6YHLBV4SRC-aAOWcYPbHBV_-hk5H8cYSwaeQX-cNPV1Y4rj4RNGI885XPh0azyAf4j4VLffw4hHeR0yWiqC1AzNRzzVk19v4xrmG_wSVg_1r8WRHjPiZ71yILTXVUThU7IO2J0basqUNAioyNz8zp3UXFJndg0lYcfYwv");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNhgjsCx-8Wz2aDP7EPrjEUmpHdnJuF9wLHkYNpTEhc9zYF4ccV5LqtICz-QaJYv7EhywgLefAE6JUd1bcUdqaST9KV3EKOHsQSmoip5I92HGR1acw59NZAw9Ky93CPhMIJ1ccrsH0-6j6pzruP6LIVQ56gIYciLfNnLmYwYNDjnyMl-aeb9qClUZydtFgRYzsUTIGwGYuOdZRFEFvtENMXN-Msc5calL3-e3WNrPlivpVOtcTow2mBXQdChynkhmqWTbbII5SbSnD");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClMbKv8Vld_EwNDvpVTw1_1TkKTQSTKFRt6lrW_uiIzwYZ4Ro6Fje09PkyhdOdv1qSITOYc1pMaDFFEQKFvSlgypvman6wAs1uLEadnV_o7MCRQ4deVjXBfAp2o5g6ajLSzXEoGQY0RDpAjIdTt8Oo_rGH8AeWcFRfUwNkcPIvGKru_NsIneQd3U_b_eLfCzU35ML0Oj1O8SyFF2J9wDaIfdn0O7BDxMv-oNRgM9w1siDbC6b-xpGxBk8RDD-0gloG-q1kNKQiYVGZ");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZ5WVq1xyto8cVLetwFyXrG-g6lEgCMOeY2UIlfkdUYH8Gshejzhf9Nsz99ZMJMvHbWy4mnu5p4GBtVHtI9Gg2vlR0cRzOfr5OMQeRC1An4-XXezcJiLlf6u-4J48NUVrFbIwBXZTy8XhY-VYxgeU2iqzaxLdGTmlgz7t21wIGvdMRjKx_UfHHR7ZmL7B33EjY5gXMFFmaBuXIkSUbqCURabIFSwAXFz0x0e3GAJ9mtHlFlgyeG2RvAZNRAGyH6Q52qgv1ykXAP8Hz");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2j4bvGg5g5Rb7tIQ3V6K4jDXKDesRb1C0mu3CV3pLIvXWkg8SBbG7RWtldoZ76y0NOJXgfc0eQZEE95p3Veuq6M2Wg3artciPRmVJ425uscTwqWp0UP9XvDOPqG7sUBo8qgXXOi_KRP8lMNhg0NWeQ_J_S1K6yD0j8PDJSSL6jnlTGbyL6w_82ruecyUxr-aBHm7AeN3D3HWmrjlXGtOkLZj4JLsppEKdvBg1wL_evA6cyFFdlYEEdw8m2lF36LpdQ3YnK97nEgoN");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUWeeKZ17kybiI1G4bykKKxhuULgutOIFG6kSJ103zT9wyX8JGpbxwl4cg8wadZRALNBRsi8eQ0Fjq6ZbOJVp3FStySKsGrqzbtZDwKuxTEArQaWX_8b2wlNVQx_epk4McgYHJyWNfia0m0WedSgF9q8xf8etHTHXkB1vWZRzpX2kN_vVO4wdJ98Eusl8Bc4LAqQ4RA1B5baZUEXSmezQln2ILKmpohYIcVG6cRbwmDUXHIfh1vwNQkeDvfMj63tmBdbFBLgz-_P0b");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmgFDsP96BkcjAQkEhuJ-NUGmm9kaSYPWV5oi3qTJzfBkfY6k61vbkAZkXwK46uMg_vxswriGu6t-4jHbHIsFGLLDgAxYvYHagJQTmARvU4gO4SQtMVCLtymQ8kR-2Z_XUQ9Vllj5wruG1HFjV-RFuMOMQnL7wMksch_--7giJpputxxdapgCjEKICK6etC5yD0JkXgZ3AGgiGWE0pRh-WGSPaX_whnJRrqD5q-9mU2wRzkHZx4bJAPChBlu-oJtIgrGWnVTrJ37Ry");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuCW__mGAxU8-MbiiUOmLKU1xuj5vMrnqLs0qleIAa_xw5T1LwaHMf1K4AZ473kZ0Hg5p1Z_oYQz_alIxtl0k2oxmWtfF2wDJ-Urm742_4RDW5i2fnx1ejR3kxCzjIPfV4A5D1rK0V7nDBEo1sy9XVgJ3yo-SdJwp8rXXvpK-171Rta2KGkMQ0pXj9lsoeMd5RhSUgOqfX-RtvRh6bcf9ZI1IABqQ6ZY-llWAw8pX_Yk6v_Kq1Lqsik20Es2M35RrvIA0Q1AfEeLpg");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAObF_XRFfYSSz425iMOGtPr6Dd6QudiZOc9voaYn9HVI4UTAsB6PKjfpAIYHyEOldj_Xh0p4qcWP58fcBOGrKCZJaNcV_-3P5WrtHvSMzXDUy-lK2VqtaXD9hoBR1ftMWIxOV1AfCir-4kI6cm7VPJRl0QI8JLBsppc0rhl3KYEzQueN5AS-xtC0GA10bmRr75wbFc6ZJ7LqXqY8jZrcFGId8WjiakH96do9spWopx-t8yuYjh4j2ZKcZ4_zGs7bexDSA_s3zFCjTT");'></div>
+<div class="aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjnpp0ahqTuFGNjsl_3Jgz66hKgzBvAf5NCiw0MFC_DS_sIk2EaiaRUTtaxyM5pmRqdaGI2EOQvw3og0arj2K_xr1x62jgaMsWR0UW81zr0SsUt5EBVtkpe0pDt4zOKZygLeO2SucthIPVo7Dvt7cL4uBA0j0zj4LwR6aiCAI4_G5h67B3XNpYMoD03NGkoe6Faa579ELHvUZk-ET6y6H4BJ7BXTEhxsoLzcKRP-JcFBwCxBCrInKrIFlqWttj25a9H_tZGmqFQvLv");'></div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
